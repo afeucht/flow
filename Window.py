@@ -23,8 +23,9 @@ class Window:
 
         #gets button and packs into menu frame
         self.mainMenu=Mymenu(menuFrame)
-        B=self.mainMenu.getButton()
-        B.pack()
+        for n in range(3):
+            B=self.mainMenu.getButton(n)
+            B.pack()
 
     def __init__(self):
         self.mainWindow=tkinter.Tk()
