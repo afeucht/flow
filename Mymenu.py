@@ -24,17 +24,48 @@ class Mymenu:
         gridFrame=Frame(window,width=screenWidth/4, height=screenHeight/2)
         rowNumber=5
         colNumber=5
-        colorfield=[[""]*colNumber]*rowNumber
+        #Declaring an empty 1D array.
+        a = []
+        #Declaring an empty 1D array.
+        b = []
+
+        #Initialize the column.
+        for j in range(0, colNumber):
+            b.append(0)
+        #Append the column to each row.
+        for i in range(0, rowNumber):
+            a.append(b)
+        #colorfield=[0*colNumber]*rowNumber
+
+        a = [sublist[:] for sublist in a]
+        colorfield=a
 
         for x in range(rowNumber):
             for y in range(colNumber):
-                colorfield[x][y]="gray"
+                colorfield[x][y]=0
 
-        colorfield[math.floor(rowNumber/2)][math.floor(colNumber/2)]="red"
+        #for x in range(rowNumber):
+        #    for y in range(colNumber):
+        #        print("%i, ", colorfield[x][y], end="")
+        #    print("\n")
+
+        #print(colorfield[math.floor(rowNumber/2)][math.floor(colNumber/2)])
+        #print("\n")
+
+        colorfield[math.floor(rowNumber/2)][math.floor(colNumber/2)]=1
+
+        #for x in range(rowNumber):
+        #    for y in range(colNumber):
+        #        print(colorfield[x][y] , ", ", end="")
+        #    print("\n")
 
         for x in range(rowNumber):
             for y in range(colNumber):
-                square=tkinter.Label(gridFrame, text = "    ",bg = colorfield[x][y])
+                if colorfield[x][y] == 0:
+                    square=tkinter.Label(gridFrame, text = "    ",bg = "gray")
+                else:
+                    square=tkinter.Label(gridFrame, text = "    ",bg = "red")
+                #print(colorfield[x][y])
                 square.grid(row = x, column = y)
                 #square.bind("<Button-1>", on_click)
 
