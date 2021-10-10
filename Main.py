@@ -1,4 +1,7 @@
-from Window import Window
+from Game import Game
 
-mainWindow=Window()
-mainWindow.run()
+#mainWindow=Window("main")
+#mainWindow.run()
+
+mainGame=Game()
+mainGame.run()
