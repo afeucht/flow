@@ -1,5 +1,5 @@
-from Myframe import Myframe
-from Mymenu import Mymenu
+#from Myframe import Myframe
+#from Mymenu import Mymenu
 import tkinter
 from math import floor
 from tkinter import *
